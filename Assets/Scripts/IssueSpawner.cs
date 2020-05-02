@@ -8,6 +8,7 @@ public class IssueSpawner : MonoBehaviour
 	//Config
 	[SerializeField] Issue issuePrefab;
 	[SerializeField] IssueSlot[] issueSlots;
+	[SerializeField] float minInterval, maxInterval;
 	[SerializeField] bool looping = true;
 
 	//Cache
@@ -29,6 +30,7 @@ public class IssueSpawner : MonoBehaviour
 		foreach (IssueSlot issueSlot in issueSlots)
 		{
 			isSlotOccupied = issueSlot.FetchOccupationStatus(); //Checks occupation
+			print(issueSlot + " occupation is " + isSlotOccupied);
 
 			if (!isSlotOccupied)
 			{
@@ -47,6 +49,7 @@ public class IssueSpawner : MonoBehaviour
 			spawnedIssue.transform.SetParent(canvas.transform, false);
 		}
 
-		yield return new WaitForSeconds(1f);
+		float intervalTime = Random.Range(minInterval, maxInterval);
+		yield return new WaitForSeconds(intervalTime);
 	}
 }

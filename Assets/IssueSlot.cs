@@ -11,18 +11,19 @@ public class IssueSlot : MonoBehaviour
     //Cache
     BoxCollider2D bc;
 
-    private void Start()
+    private void Awake()
     {
         bc = GetComponent<BoxCollider2D>();
     }
-    private void Update()
+
+    public bool FetchOccupationStatus()
     {
         CheckForOccupation();
+        return isOccupied;
     }
-
     private void CheckForOccupation()
     {
-        if(bc.IsTouchingLayers(LayerMask.GetMask("UI")))
+        if (bc.IsTouchingLayers(LayerMask.GetMask("UI")))
         {
             isOccupied = true;
         }
@@ -30,10 +31,5 @@ public class IssueSlot : MonoBehaviour
         {
             isOccupied = false;
         }
-    }
-
-    public bool FetchOccupationStatus()
-    {
-        return isOccupied;
     }
 }

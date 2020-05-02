@@ -1119,6 +1119,8 @@ MonoBehaviour:
   - {fileID: 795451977}
   - {fileID: 104489428}
   - {fileID: 167446502}
+  minInterval: 5
+  maxInterval: 10
   looping: 1
 --- !u!4 &1483244075
 Transform:
