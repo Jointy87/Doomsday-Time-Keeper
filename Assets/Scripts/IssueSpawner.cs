@@ -30,19 +30,16 @@ public class IssueSpawner : MonoBehaviour
 		foreach (IssueSlot issueSlot in issueSlots)
 		{
 			isSlotOccupied = issueSlot.FetchOccupationStatus(); //Checks occupation
-			print(issueSlot + " occupation is " + isSlotOccupied);
 
 			if (!isSlotOccupied)
 			{
 				freeSlots.Add(issueSlot); //Adds slot to list if free
-				print(freeSlots.Count);
 			}
 		}
 
 		if (freeSlots.Count > 0)
 		{
 			var slotToSpawnAt = freeSlots.Count - 1;
-			print("free slot at coordinates " + freeSlots[slotToSpawnAt].transform.position);
 
 			Canvas canvas = FindObjectOfType<Canvas>();
 			Issue spawnedIssue = Instantiate(issuePrefab, freeSlots[slotToSpawnAt].transform.localPosition, Quaternion.identity);
