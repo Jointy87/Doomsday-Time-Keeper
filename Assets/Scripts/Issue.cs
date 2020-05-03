@@ -24,10 +24,12 @@ public class Issue : MonoBehaviour
 		{
 			var issueCategory = gic.FetchGlobalIssueCategory(Random.Range(0, 6));
 			print(issueCategory);
-			
-			issueCategorySlots[diffRating].gameObject.SetActive(true);
 
-			
+			Sprite issueImage = gic.FetchGlobalIssueImage(issueCategory);
+
+			var thisIssue = issueCategorySlots[diffRating];
+			thisIssue.gameObject.SetActive(true);
+			thisIssue.GetComponent<Image>().sprite = issueImage;			
 		}
 	}
 

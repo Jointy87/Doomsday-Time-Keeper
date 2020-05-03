@@ -15,7 +15,7 @@ public class GlobalIssuesCategories : MonoBehaviour
 
 	public enum GlobalIssues { climate, pandemic, etSecurity, nuclearThreat, globalSecurity, ai}
 
-	Image issueImage;
+	Sprite issueImage;
 	GlobalIssues chosenIssueCategory;
 
 	public GlobalIssues FetchGlobalIssueCategory(int issue)
@@ -23,31 +23,32 @@ public class GlobalIssuesCategories : MonoBehaviour
 		chosenIssueCategory = (GlobalIssues)issue;
 		return chosenIssueCategory;
 	}
-	public Image FetchGlobalIssueImage(GlobalIssues issue)
+	public Sprite FetchGlobalIssueImage(GlobalIssues issue)
 	{
+
 		if (issue == GlobalIssues.climate)
 		{
-			issueImage = climateIcon;
+			issueImage = climateIcon.GetComponent<Image>().sprite;
 		}
 		else if (issue == GlobalIssues.pandemic)
 		{
-			issueImage = pandemicIcon;
+			issueImage = pandemicIcon.GetComponent<Image>().sprite;
 		}
 		else if (issue == GlobalIssues.etSecurity)
 		{
-			issueImage = etSecurityIcon;
+			issueImage = etSecurityIcon.GetComponent<Image>().sprite;
 		}
 		else if (issue == GlobalIssues.nuclearThreat)
 		{
-			issueImage = nuclearThreatIcon;
+			issueImage = nuclearThreatIcon.GetComponent<Image>().sprite;
 		}
 		else if (issue == GlobalIssues.globalSecurity)
 		{
-			issueImage = globalSecurityIcon;
+			issueImage = globalSecurityIcon.GetComponent<Image>().sprite;
 		}
 		else if (issue == GlobalIssues.ai)
 		{
-			Image issueImage = aiIcon;
+			issueImage = aiIcon.GetComponent<Image>().sprite;
 		}
 
 		return issueImage;
