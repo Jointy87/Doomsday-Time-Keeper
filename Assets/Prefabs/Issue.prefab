@@ -861,6 +861,13 @@ MonoBehaviour:
   mediumTimeAmount: 15
   hardTimeAmount: 20
   timerPrefab: {fileID: 687496433249303160}
+  categoryDataFiles:
+  - {fileID: 11400000, guid: 06584a4d1356b744d8347098106ed1f7, type: 2}
+  - {fileID: 11400000, guid: 443b57a2af6cef048862f365fa70dd34, type: 2}
+  - {fileID: 11400000, guid: 09b59c3a09eb3b247a2ef74de54d868b, type: 2}
+  - {fileID: 11400000, guid: daab9045db3bc584682316f2e2bab8d2, type: 2}
+  - {fileID: 11400000, guid: fb1346fb4daadf64c9a525b7942d401d, type: 2}
+  - {fileID: 11400000, guid: 01337b78f638e5945a6802da986b8176, type: 2}
   issueCategorySlots:
   - {fileID: 2627118223490948570}
   - {fileID: 6069141990205857224}

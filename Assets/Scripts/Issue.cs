@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class Issue : MonoBehaviour
 {
 	//Config
-
 	[Header("Time")]
 	[Tooltip("Time in s to complete easy issue")] [SerializeField] float easyTimeAmount;
 	[Tooltip("Time in s to complete medium issue")] [SerializeField] float mediumTimeAmount;
 	[Tooltip("Time in s to complete hard issue")] [SerializeField] float hardTimeAmount;
 	[Tooltip("Timer visualization prefab")] [SerializeField] GameObject timerPrefab;
+
+	[Header("Issue Categories")]
+	[Tooltip("Array of issue category date files")] [SerializeField] IssueCategoryDataCreator[] categoryDataFiles;
 	
 	[Header("Element slots")]
 	[Tooltip("The slots that will become the categories")] [SerializeField] GameObject[] issueCategorySlots;
@@ -19,22 +21,22 @@ public class Issue : MonoBehaviour
 
 	//Cache
 	int difficulty;
-	GlobalIssuesCategories gic;
-	float[] categoryTimes;
+	//GlobalIssuesCategories gic;
+	float[] issueTimes;
 	float issueTimeAmount;
 	Image timerImage;
 	float timeLeft;
 
 	void Awake()
 	{
-		categoryTimes = new float[] { easyTimeAmount, mediumTimeAmount, hardTimeAmount };
-		gic = FindObjectOfType<GlobalIssuesCategories>();
+		issueTimes = new float[] { easyTimeAmount, mediumTimeAmount, hardTimeAmount };
+		//gic = FindObjectOfType<GlobalIssuesCategories>();
 		timerImage = timerPrefab.GetComponent<Image>();
 
 	}
 	void Start()
 	{
-		difficulty = Random.Range(1, 4);
+		difficulty = Random.Range(1, 4); //Decides the amount of categories
 
 		SpawnCategories();
 		SetTimer();
@@ -47,7 +49,7 @@ public class Issue : MonoBehaviour
 
 	private void SpawnCategories()
 	{
-		for (int diffRating = 0; diffRating < difficulty; diffRating++)
+		for (int diffRating = 0; diffRating < difficulty; diffRating++) //For each of total categories...
 		{
 			var thisIssue = issueCategorySlots[diffRating];
 
@@ -58,9 +60,9 @@ public class Issue : MonoBehaviour
 
 	private void SelectCategory(GameObject thisIssue)
 	{
-		var issueCategory = gic.FetchGlobalIssueCategory(Random.Range(0, 6));
-		Sprite issueImage = gic.FetchGlobalIssueImage(issueCategory);
-		thisIssue.GetComponent<Image>().sprite = issueImage;
+		var issueCategory = categoryDataFiles[Random.Range(0, 6)];
+		Sprite categoryImage = issueCategory.categoryImage.sprite;
+		thisIssue.GetComponent<Image>().sprite = categoryImage;
 	}
 	private void SpawnCategory(GameObject thisIssue)
 	{
@@ -69,7 +71,7 @@ public class Issue : MonoBehaviour
 
 	private void SetTimer()
 	{
-		issueTimeAmount = categoryTimes[difficulty-1];
+		issueTimeAmount = issueTimes[difficulty-1];
 		timeLeft = issueTimeAmount;
 	}
 
