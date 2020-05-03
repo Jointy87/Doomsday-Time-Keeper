@@ -6,9 +6,15 @@ using UnityEngine.UI;
 public class Issue : MonoBehaviour
 {
 	//Config
+
+	[Header("Time per difficulty")]
+	[Tooltip("Time in s to complete easy issue")] [SerializeField] float easyTimeAmount;
+	[Tooltip("Time in s to complete medium issue")] [SerializeField] float mediumTimeAmount;
+	[Tooltip("Time in s to complete hard issue")] [SerializeField] float hardTimeAmount;
 	
-	[SerializeField] GameObject[] issueCategorySlots;
-	[SerializeField] GameObject[] options;
+	[Header("Element slots")]
+	[Tooltip("The slots that will become the categories")] [SerializeField] GameObject[] issueCategorySlots;
+	[Tooltip("The slots that will become the options")] [SerializeField] GameObject[] options;
 
 	//Cache
 	int difficulty;

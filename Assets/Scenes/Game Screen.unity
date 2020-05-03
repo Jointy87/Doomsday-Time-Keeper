@@ -1095,7 +1095,6 @@ GameObject:
   - component: {fileID: 1483244075}
   - component: {fileID: 1483244074}
   - component: {fileID: 1483244076}
-  - component: {fileID: 1483244077}
   m_Layer: 0
   m_Name: Game Logic
   m_TagString: Untagged
@@ -1161,18 +1160,6 @@ MonoBehaviour:
   globalSecurityIcon: {fileID: 4934757892815956150, guid: 2765def9251ab5f4ea7610d18f0fb9c4,
     type: 3}
   aiIcon: {fileID: 8407002184875436319, guid: 61013eb586a075847900304843014ee6, type: 3}
---- !u!114 &1483244077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483244073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60ec8fc59419d7748b4b4cf0ac43da64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1724489775
 PrefabInstance:
   m_ObjectHideFlags: 0

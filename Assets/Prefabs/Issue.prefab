@@ -783,7 +783,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2365c02212f009849a5c7d39651c8931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  categoriesPrefab: {fileID: 0}
+  easyTimeAmount: 7
+  mediumTimeAmount: 15
+  hardTimeAmount: 20
   issueCategorySlots:
   - {fileID: 2627118223490948570}
   - {fileID: 6069141990205857224}
