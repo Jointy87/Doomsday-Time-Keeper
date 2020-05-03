@@ -147,7 +147,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8416304082335506290}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -644,7 +644,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8416304082335506290}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -737,9 +737,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 25289228071713757}
+  - component: {fileID: 6114358078495234745}
   - component: {fileID: 7354350356593343712}
   - component: {fileID: 6978155939919571279}
-  - component: {fileID: 6114358078495234745}
   - component: {fileID: -3116169812209864054}
   - component: {fileID: -433323484811641979}
   m_Layer: 5
@@ -771,6 +771,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 256, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6114358078495234745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6969082236772725468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2365c02212f009849a5c7d39651c8931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoriesPrefab: {fileID: 0}
+  issueCategorySlots:
+  - {fileID: 2627118223490948570}
+  - {fileID: 6069141990205857224}
+  - {fileID: 3898897577318934487}
+  options:
+  - {fileID: 5717693739829095917}
+  - {fileID: 5359340427244627499}
+  - {fileID: 5881935745063871049}
+  - {fileID: 2324303995850496648}
+  - {fileID: 8482725852498910704}
+  - {fileID: 7141716313140343599}
 --- !u!222 &7354350356593343712
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -807,29 +831,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6114358078495234745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6969082236772725468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2365c02212f009849a5c7d39651c8931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  issueCategorySlots:
-  - {fileID: 3547147438190097930}
-  - {fileID: 8440087862368914790}
-  - {fileID: 307626469637560521}
-  options:
-  - {fileID: 120080821315841729}
-  - {fileID: 2153353488684656503}
-  - {fileID: 8023128171867088221}
-  - {fileID: 4096244965920811322}
-  - {fileID: 1838968398269246665}
-  - {fileID: 1409601183759338295}
 --- !u!61 &-3116169812209864054
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -904,8 +905,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3940212959163057549}
   - {fileID: 7931334490217873451}
+  - {fileID: 3940212959163057549}
   - {fileID: 2275615430637834234}
   m_Father: {fileID: 25289228071713757}
   m_RootOrder: 2
