@@ -20,25 +20,33 @@ public class Issue : MonoBehaviour
 	int difficulty;
 	GlobalIssuesCategories gic;
 
-	void Start()
+	void Awake()
 	{
 		gic = FindObjectOfType<GlobalIssuesCategories>();
-
+	}
+	void Start()
+	{
 		difficulty = Random.Range(1, 4);
 
-		SelectAndSpawnIssueCategories();
+		SpawnCategories();
 	}
 
-	private void SelectAndSpawnIssueCategories()
+	private void SpawnCategories()
 	{
 		for (int diffRating = 0; diffRating < difficulty; diffRating++)
 		{
 			var thisIssue = issueCategorySlots[diffRating];
-			thisIssue.gameObject.SetActive(true);
 
-			var issueCategory = gic.FetchGlobalIssueCategory(Random.Range(0, 6));
-			Sprite issueImage = gic.FetchGlobalIssueImage(issueCategory);
-			thisIssue.GetComponent<Image>().sprite = issueImage;
+			SelectCategory(thisIssue);
+
+			thisIssue.gameObject.SetActive(true);
 		}
+	}
+
+	private void SelectCategory(GameObject thisIssue)
+	{
+		var issueCategory = gic.FetchGlobalIssueCategory(Random.Range(0, 6));
+		Sprite issueImage = gic.FetchGlobalIssueImage(issueCategory);
+		thisIssue.GetComponent<Image>().sprite = issueImage;
 	}
 }
