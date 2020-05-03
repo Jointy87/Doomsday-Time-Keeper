@@ -6,19 +6,28 @@ using UnityEngine.UI;
 public class Issue : MonoBehaviour
 {
 	//Config
-	[SerializeField] Image[] categories;
+	[SerializeField] Image[] issueCategorySlots;
 	[SerializeField] Image[] options;
 
 	//Cache
 	int difficulty;
+	GlobalIssuesCategories gic;
+
 	void Start()
 	{
+		gic = FindObjectOfType<GlobalIssuesCategories>();
+		
 		difficulty = Random.Range(1, 4);
 		print(difficulty);
 
 		for(int diffRating = 0; diffRating < difficulty; diffRating++)
 		{
-			categories[diffRating].gameObject.SetActive(true);
+			var issueCategory = gic.FetchGlobalIssueCategory(Random.Range(0, 6));
+			print(issueCategory);
+			
+			issueCategorySlots[diffRating].gameObject.SetActive(true);
+
+			
 		}
 	}
 
