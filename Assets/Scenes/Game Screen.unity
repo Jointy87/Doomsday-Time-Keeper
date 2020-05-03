@@ -1094,6 +1094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1483244075}
   - component: {fileID: 1483244074}
+  - component: {fileID: 1483244076}
   m_Layer: 0
   m_Name: Game Logic
   m_TagString: Untagged
@@ -1136,6 +1137,29 @@ Transform:
   m_Father: {fileID: 37457135}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483244076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483244073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9362ecaf3b20b498662555c1ffb479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climateIcon: {fileID: 8042396358335147274, guid: 30f17e58a923281499b467d7a74d1888,
+    type: 3}
+  pandemicIcon: {fileID: 5060314297741167863, guid: f773f0dde1b36f64eb405fdb51058af5,
+    type: 3}
+  etSecurityIcon: {fileID: 7071754696260506481, guid: ee8a9ed1691f87c43ab46aec6f0a2c0f,
+    type: 3}
+  nuclearThreatIcon: {fileID: 6893435522801960000, guid: 643af3ba49aa9b7489baee5c251d0857,
+    type: 3}
+  globalSecurityIcon: {fileID: 4934757892815956150, guid: 2765def9251ab5f4ea7610d18f0fb9c4,
+    type: 3}
+  aiIcon: {fileID: 8407002184875436319, guid: 61013eb586a075847900304843014ee6, type: 3}
 --- !u!1001 &1724489775
 PrefabInstance:
   m_ObjectHideFlags: 0
