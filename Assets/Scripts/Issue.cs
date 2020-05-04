@@ -13,7 +13,7 @@ public class Issue : MonoBehaviour
 	[Tooltip("Timer visualization prefab")] [SerializeField] GameObject timerPrefab;
 
 	[Header("Issue Categories")]
-	[Tooltip("Array of issue category date files")] [SerializeField] IssueCategoryDataCreator[] categoryDataFiles;
+	[Tooltip("Array of issue category data files")] [SerializeField] IssueCategoryData[] categoryDataFiles;
 	
 	[Header("Element slots")]
 	[Tooltip("The slots that will become the categories")] [SerializeField] GameObject[] issueCategorySlots;
@@ -21,7 +21,6 @@ public class Issue : MonoBehaviour
 
 	//Cache
 	int difficulty;
-	//GlobalIssuesCategories gic;
 	float[] issueTimes;
 	float issueTimeAmount;
 	Image timerImage;
@@ -30,7 +29,6 @@ public class Issue : MonoBehaviour
 	void Awake()
 	{
 		issueTimes = new float[] { easyTimeAmount, mediumTimeAmount, hardTimeAmount };
-		//gic = FindObjectOfType<GlobalIssuesCategories>();
 		timerImage = timerPrefab.GetComponent<Image>();
 
 	}
@@ -51,22 +49,22 @@ public class Issue : MonoBehaviour
 	{
 		for (int diffRating = 0; diffRating < difficulty; diffRating++) //For each of total categories...
 		{
-			var thisIssue = issueCategorySlots[diffRating];
+			GameObject thisCategory = issueCategorySlots[diffRating];
 
-			SelectCategory(thisIssue);
-			SpawnCategory(thisIssue);
+			SelectCategory(thisCategory);
+			SpawnCategory(thisCategory);
 		}
 	}
 
-	private void SelectCategory(GameObject thisIssue)
+	private void SelectCategory(GameObject thisCategory)
 	{
 		var issueCategory = categoryDataFiles[Random.Range(0, 6)];
 		Sprite categoryImage = issueCategory.categoryImage.sprite;
-		thisIssue.GetComponent<Image>().sprite = categoryImage;
+		thisCategory.GetComponent<Image>().sprite = categoryImage;
 	}
-	private void SpawnCategory(GameObject thisIssue)
+	private void SpawnCategory(GameObject thisCategory)
 	{
-		thisIssue.gameObject.SetActive(true);
+		thisCategory.gameObject.SetActive(true);
 	}
 
 	private void SetTimer()

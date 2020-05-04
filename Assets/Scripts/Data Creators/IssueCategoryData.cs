@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "IssueCategoryDataFile")]
-[System.Serializable]
-public class IssueCategoryDataCreator : ScriptableObject
+public class IssueCategoryData : ScriptableObject
 {
     public string categoryName;
     public Image categoryImage;
