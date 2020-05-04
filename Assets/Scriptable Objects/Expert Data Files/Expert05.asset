@@ -15,8 +15,8 @@ MonoBehaviour:
   expertName: 05
   expertImage: {fileID: 6135286412264252510, guid: 2a0b0bdc406dd2446ba292f7948da51b,
     type: 3}
-  wakeTime: 0
-  sleepTime: 0
+  dayStart: 0.4
+  dayEnd: 0.75
   expertise:
   - {fileID: 11400000, guid: 01337b78f638e5945a6802da986b8176, type: 2}
   - {fileID: 11400000, guid: 01337b78f638e5945a6802da986b8176, type: 2}

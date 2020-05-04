@@ -6,6 +6,6 @@ using UnityEngine.UI;
 [CreateAssetMenu(menuName = "IssueCategoryDataFile")]
 public class IssueCategoryData : ScriptableObject
 {
-    public string categoryName;
-    public Image categoryImage;
+    [Tooltip("Name of issue category")] public string categoryName;
+    [Tooltip("Icon of issue category")] public Image categoryImage;
 }

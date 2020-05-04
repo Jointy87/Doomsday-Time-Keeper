@@ -386,6 +386,7 @@ MonoBehaviour:
   - {fileID: 2858166805132256290}
   - {fileID: 8538149197810223730}
   expertImage: {fileID: 4884994630248466203}
+  clock: {fileID: 3786435452795338613}
 --- !u!222 &2334048302313751821
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -607,6 +608,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8655328889231864329, guid: 6ac63b7c7b3d4fc4c905063043e6779a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655328889231864329, guid: 6ac63b7c7b3d4fc4c905063043e6779a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.59636354
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655328889231864329, guid: 6ac63b7c7b3d4fc4c905063043e6779a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8745975752236145520, guid: 6ac63b7c7b3d4fc4c905063043e6779a,
         type: 3}
       propertyPath: m_Name
@@ -620,3 +636,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2637038479918689648}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3786435452795338613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1158756051220779525, guid: 6ac63b7c7b3d4fc4c905063043e6779a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2637038479918689648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce2722e8c2246e459537338ef671f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

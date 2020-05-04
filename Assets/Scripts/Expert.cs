@@ -12,7 +12,16 @@ public class Expert : MonoBehaviour
 	[Header("Element Slots")]
 	[Tooltip("The slots that will become the expertise of expert")] [SerializeField] GameObject[] expertiseSlots;
 	[Tooltip("Image of the expert")] [SerializeField] GameObject expertImage;
-	
+	[Tooltip("The clock prefab")] [SerializeField] TimeZoneClock clock;
+
+	//Cache
+	float dayStart;
+	float dayEnd;
+	void Awake()
+	{
+		SetExpertDayTime();
+	}
+
 	void Start()
 	{
 		FetchAndSpawnExpertises();
@@ -44,5 +53,11 @@ public class Expert : MonoBehaviour
 	{
 		Sprite expertImageToSpawn = expertDataFile.expertImage.sprite;
 		expertImage.GetComponent<Image>().sprite = expertImageToSpawn;
+	}
+	private void SetExpertDayTime()
+	{
+		dayStart = expertDataFile.dayStart;
+		dayEnd = expertDataFile.dayEnd;
+		clock.SetDayTimes(dayStart, dayEnd);
 	}
 }
