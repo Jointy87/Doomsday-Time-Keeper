@@ -141,7 +141,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0.5
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -201,6 +201,8 @@ MonoBehaviour:
   realSecPerDay: 30
   clockHand: {fileID: 237193986173830366}
   timeZoneIndicator: {fileID: 8655328889231864329}
+  dayStart: 0
+  dayEnd: 0
 --- !u!222 &3815207454698564346
 CanvasRenderer:
   m_ObjectHideFlags: 0

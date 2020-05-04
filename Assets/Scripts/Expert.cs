@@ -15,8 +15,7 @@ public class Expert : MonoBehaviour
 	[Tooltip("The clock prefab")] [SerializeField] TimeZoneClock clock;
 
 	//Cache
-	float dayStart;
-	float dayEnd;
+	float timeStart;
 	void Awake()
 	{
 		SetExpertDayTime();
@@ -56,8 +55,7 @@ public class Expert : MonoBehaviour
 	}
 	private void SetExpertDayTime()
 	{
-		dayStart = expertDataFile.dayStart;
-		dayEnd = expertDataFile.dayEnd;
-		clock.SetDayTimes(dayStart, dayEnd);
+		timeStart = expertDataFile.timeStart;
+		clock.SetStartTime(timeStart);
 	}
 }

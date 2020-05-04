@@ -15,8 +15,7 @@ MonoBehaviour:
   expertName: 02
   expertImage: {fileID: 6135286412264252510, guid: 87d1716d6a3d1294e912484344429b95,
     type: 3}
-  dayStart: 0.5
-  dayEnd: 0.1
+  timeStart: 0.5
   expertise:
   - {fileID: 11400000, guid: 443b57a2af6cef048862f365fa70dd34, type: 2}
   - {fileID: 11400000, guid: 443b57a2af6cef048862f365fa70dd34, type: 2}

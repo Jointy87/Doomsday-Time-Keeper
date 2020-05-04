@@ -6,19 +6,23 @@ using UnityEngine.UI;
 public class TimeZoneClock : MonoBehaviour
 {
 	//Config
+	[Header("Time data")]
 	[Tooltip("The amount of real life seconds that make an in-game day")] [SerializeField] float realSecPerDay = 30f;
+	[Tooltip("Time the day ends in normalized value")] [SerializeField] float dayEnd;
+
+	[Header("Elements")]
 	[Tooltip("The clockhand that will turn as time passes")] [SerializeField] Image clockHand;
 	[Tooltip("The area on the clock that indicates the expert's awake time")] [SerializeField] Image timeZoneIndicator;
 
 	//Cache
 	float day;
 	float normalizedDay;
-	float dayStart;
-	float dayEnd;
+	float timeStart;
 	bool isDaytime = false;
 	void Start()
 	{
-		
+		day = timeStart;
+		timeZoneIndicator.GetComponent<Image>().fillAmount = dayEnd;
 	}
 	void Update()
 	{
@@ -33,35 +37,19 @@ public class TimeZoneClock : MonoBehaviour
 		float rotationDegreesPerDay = 360f;
 		clockHand.transform.eulerAngles = new Vector3(0, 0, -normalizedDay * rotationDegreesPerDay);
 	}
-
-	public void SetDayTimes(float startTime, float endTime)
-	{
-		dayStart = startTime;
-		dayEnd = endTime;
-	}
 	private void CheckForDayOrNight()
 	{
-		if (dayStart < dayEnd)
+		if (normalizedDay >= 0 && normalizedDay <= dayEnd)
 		{
-			if (normalizedDay >= dayStart && normalizedDay <= dayEnd)
-			{
-				isDaytime = true;
-			}
-			else
-			{
-				isDaytime = false;
-			}
+			isDaytime = true;
 		}
-		else if (dayStart > dayEnd)
+		else
 		{
-			if (normalizedDay >= dayStart || normalizedDay <= dayEnd)
-			{
-				isDaytime = true;
-			}
-			else
-			{
-				isDaytime = false;
-			}
+			isDaytime = false;
 		}
+	}
+	public void SetStartTime(float startTime)
+	{
+		timeStart = startTime;
 	}
 }
