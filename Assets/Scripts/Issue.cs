@@ -36,7 +36,7 @@ public class Issue : MonoBehaviour
 	{
 		difficulty = Random.Range(1, 4); //Decides the amount of categories
 
-		SpawnCategories();
+		FetchAndSpawnCategories();
 		SetTimer();
 	}
 
@@ -45,7 +45,7 @@ public class Issue : MonoBehaviour
 		TimerCountDown();
 	}
 
-	private void SpawnCategories()
+	private void FetchAndSpawnCategories()
 	{
 		for (int diffRating = 0; diffRating < difficulty; diffRating++) //For each of total categories...
 		{
