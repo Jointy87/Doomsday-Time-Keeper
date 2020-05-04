@@ -15,16 +15,10 @@ public class Expert : MonoBehaviour
 	
 	void Start()
 	{
-		SpawnExpertise();
+		FetchAndSpawnExpertises();
+		SetExpertImage();
 	}
-
-
-	void Update()
-	{
-		
-	}
-
-	private void SpawnExpertise()
+	private void FetchAndSpawnExpertises()
 	{
 		var expertiseAmountToSpawn = expertDataFile.expertise.Length;
 
@@ -32,8 +26,23 @@ public class Expert : MonoBehaviour
 		{
 			var thisExpertise = expertiseSlots[expertiseAmount];
 
-			IssueCategoryData relevantExpertise = expertDataFile.expertise[expertiseAmount];	//THIS IS WHERE THE PROBLEM IS
-			Sprite expertiseImage = relevantExpertise.categoryImage.sprite;			
+			FetchExpertise(expertiseAmount, thisExpertise);
+			SpawnExpertise(thisExpertise);
 		}
+	}
+	private void FetchExpertise(int expertiseAmount, GameObject thisExpertise)
+	{
+		var relevantExpertise = expertDataFile.expertise[expertiseAmount] as IssueCategoryData; //Need to put the as here or else for some reason it wouldn't work
+		Sprite expertiseImage = relevantExpertise.categoryImage.sprite;
+		thisExpertise.GetComponent<Image>().sprite = expertiseImage;
+	}
+	private static void SpawnExpertise(GameObject thisExpertise)
+	{
+		thisExpertise.gameObject.SetActive(true);
+	}
+	private void SetExpertImage()
+	{
+		Sprite expertImageToSpawn = expertDataFile.expertImage.sprite;
+		expertImage.GetComponent<Image>().sprite = expertImageToSpawn;
 	}
 }
